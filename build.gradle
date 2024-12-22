@@ -1,0 +1,25 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.9.23'
+}
+
+group = 'com.demo'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.kohsuke:github-api:1.326'
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.2")
+    testImplementation("org.mockito:mockito-inline:3.12.4")
+    testImplementation("org.assertj:assertj-core:3.23.1")
+}
+
+test {
+    useJUnitPlatform()
+}
+kotlin {
+    jvmToolchain(17)
+}
