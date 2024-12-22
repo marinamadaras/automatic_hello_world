@@ -25,6 +25,10 @@ class GitHubService(private val ghAPI: GitHubAdapter) {
         ghAPI.createPullRequest(repository, prDetails)
     }
 
+    /**
+     * Ensures that the branch name does not already exist in the repository,
+     * by appending a suffix to the branch name if necessary.
+     */
     private fun ensureBranchDoesNotExistAlready(repository: GHRepository, prDetails: PullRequestDetails){
         var suffix = 1
 
